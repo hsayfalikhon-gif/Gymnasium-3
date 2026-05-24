@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Гимназияи №3 | Истаравшан</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* HEADER */
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:1000;
+    background:rgba(0,0,0,0.5);
+    backdrop-filter:blur(15px);
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+}
+
+.logo{
+    font-size:35px;
+    color:#00bfff;
+    font-weight:bold;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#00bfff;
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+    url('https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1600&auto=format&fit=crop');
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero-content h1{
+    font-size:75px;
+    margin-bottom:20px;
+    animation:fadeDown 2s ease;
+}
+
+.hero-content p{
+    font-size:24px;
+    margin-bottom:30px;
+    color:#d1d5db;
+}
+
+.hero-content button{
+    padding:16px 45px;
+    border:none;
+    border-radius:50px;
+    background:#00bfff;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+.hero-content button:hover{
+    transform:scale(1.1);
+    background:#0099cc;
+}
+
+/* ABOUT */
+
+.about{
+    padding:120px 10%;
+    text-align:center;
+    background:white;
+    color:black;
+}
+
+.about h2{
+    font-size:55px;
+    color:#00bfff;
+    margin-bottom:30px;
+}
+
+.about p{
+    font-size:22px;
+    line-height:1.8;
+}
+
+/* STATS */
+
+.stats{
+    padding:120px 10%;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:40px;
+}
+
+.card{
+    width:280px;
+    background:rgba(255,255,255,0.08);
+    border-radius:25px;
+    padding:50px;
+    text-align:center;
+    backdrop-filter:blur(15px);
+    transition:0.5s;
+}
+
+.card:hover{
+    transform:translateY(-15px);
+    box-shadow:0 0 30px #00bfff;
+}
+
+.card h3{
+    font-size:60px;
+    color:#00bfff;
+}
+
+.card p{
+    margin-top:15px;
+    font-size:22px;
+}
+
+/* DIRECTOR */
+
+.director{
+    padding:120px 10%;
+    text-align:center;
+    background:#111827;
+}
+
+.director h2{
+    font-size:55px;
+    color:#00bfff;
+    margin-bottom:20px;
+}
+
+.director p{
+    font-size:30px;
+}
+
+/* SUBJECTS */
+
+.subjects{
+    padding:120px 10%;
+    background:white;
+    color:black;
+    text-align:center;
+}
+
+.subjects h2{
+    font-size:55px;
+    color:#00bfff;
+    margin-bottom:60px;
+}
+
+.subject-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:35px;
+}
+
+.subject{
+    background:#0f172a;
+    color:white;
+    padding:50px 20px;
+    border-radius:25px;
+    transition:0.5s;
+}
+
+.subject:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 25px #00bfff;
+}
+
+.subject h3{
+    font-size:35px;
+    margin-bottom:15px;
+    color:#00bfff;
+}
+
+.subject p{
+    font-size:18px;
+    line-height:1.6;
+}
+
+/* GALLERY */
+
+.gallery{
+    padding:120px 10%;
+    text-align:center;
+    background:#0f172a;
+}
+
+.gallery h2{
+    font-size:55px;
+    color:#00bfff;
+    margin-bottom:50px;
+}
+
+.images{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.images img{
+    width:100%;
+    border-radius:25px;
+    transition:0.5s;
+}
+
+.images img:hover{
+    transform:scale(1.05);
+}
+
+/* CONTACT */
+
+.contact{
+    padding:120px 10%;
+    text-align:center;
+    background:white;
+    color:black;
+}
+
+.contact h2{
+    font-size:55px;
+    color:#00bfff;
+    margin-bottom:30px;
+}
+
+.contact p{
+    font-size:22px;
+    margin:15px 0;
+}
+
+/* FOOTER */
+
+footer{
+    background:black;
+    padding:40px;
+    text-align:center;
+    font-size:18px;
+}
+
+/* ANIMATION */
+
+@keyframes fadeDown{
+
+    from{
+        opacity:0;
+        transform:translateY(-50px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    nav{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero-content h1{
+        font-size:45px;
+    }
+
+    .hero-content p{
+        font-size:18px;
+    }
+
+    .about h2,
+    .director h2,
+    .subjects h2,
+    .gallery h2,
+    .contact h2{
+        font-size:40px;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+
+<nav>
+
+<div class="logo">
+Гимназияи №3
+</div>
+
+<ul>
+<li><a href="#">Асосӣ</a></li>
+<li><a href="#about">Дар бораи мо</a></li>
+<li><a href="#subjects">Фанҳо</a></li>
+<li><a href="#gallery">Галерея</a></li>
+<li><a href="#contact">Тамос</a></li>
+</ul>
+
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+Гимназияи №3 ш.Истаравшан
+</h1>
+
+<p>
+Муассисаи муосири таълимӣ барои насли оянда
+</p>
+
+<button onclick="showMessage()">
+Маълумоти бештар
+</button>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<h2>
+Дар бораи муассиса
+</h2>
+
+<p>
+Гимназияи №3 шаҳри Истаравшан яке аз беҳтарин
+муассисаҳои таълимӣ буда, дорои омӯзгорони касбӣ,
+синфхонаҳои муосир ва муҳити замонавии таҳсил мебошад.
+Дар муассиса зиёда аз 500 хонанда ва 25 омӯзгор
+фаъолият менамоянд.
+</p>
+
+</section>
+
+<!-- STATS -->
+
+<section class="stats">
+
+<div class="card">
+<h3>500+</h3>
+<p>Хонандагон</p>
+</div>
+
+<div class="card">
+<h3>25+</h3>
+<p>Омӯзгорон</p>
+</div>
+
+<div class="card">
+<h3>№3</h3>
+<p>Гимназия</p>
+</div>
+
+</section>
+
+<!-- DIRECTOR -->
+
+<section class="director">
+
+<h2>
+Директори муассиса
+</h2>
+
+<p>
+Эшонқулов Шавкат
+</p>
+
+</section>
+
+<!-- SUBJECTS -->
+
+<section class="subjects" id="subjects">
+
+<h2>
+Фанҳои таълимӣ
+</h2>
+
+<div class="subject-grid">
+
+<div class="subject">
+<h3>Биология</h3>
+<p>
+Омӯзиши табиат, инсон ва организмҳои зинда.
+</p>
+</div>
+
+<div class="subject">
+<h3>Химия</h3>
+<p>
+Омӯзиши моддаҳо ва реаксияҳои химиявӣ.
+</p>
+</div>
+
+<div class="subject">
+<h3>Таърих</h3>
+<p>
+Омӯзиши таърихи халқу давлатҳо.
+</p>
+</div>
+
+<div class="subject">
+<h3>Математика</h3>
+<p>
+Алгебра, геометрия ва ҳисобҳои мураккаб.
+</p>
+</div>
+
+<div class="subject">
+<h3>Физика</h3>
+<p>
+Қонунҳои табиат ва ҳаракати ҷисмҳо.
+</p>
+</div>
+
+<div class="subject">
+<h3>Информатика</h3>
+<p>
+Барномасозӣ ва технологияҳои муосир.
+</p>
+</div>
+
+<div class="subject">
+<h3>Забони Англисӣ</h3>
+<p>
+Омӯзиши забони байналмилалӣ.
+</p>
+</div>
+
+<div class="subject">
+<h3>География</h3>
+<p>
+Омӯзиши кишварҳо ва табиати ҷаҳон.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section class="gallery" id="gallery">
+
+<h2>
+Галерея
+</h2>
+
+<div class="images">
+
+<img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=1200&auto=format&fit=crop">
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<h2>
+Тамос
+</h2>
+
+<p>
+📍 ш. Истаравшан
+</p>
+
+<p>
+🏫 Гимназияи №3
+</p>
+
+<p>
+👨‍🏫 Директор: Эшонқулов Шавкат
+</p>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+© 2026 Гимназияи №3 | Ҳамаи ҳуқуқҳо ҳифз шудаанд
+
+</footer>
+
+<script>
+
+function showMessage(){
+
+    alert("Хуш омадед ба Гимназияи №3 шаҳри Истаравшан!");
+
+}
+
+/* ANIMATION */
+
+const cards = document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+    card.addEventListener("mousemove",()=>{
+
+        card.style.transform="translateY(-15px)";
+
+    });
+
+    card.addEventListener("mouseleave",()=>{
+
+        card.style.transform="translateY(0px)";
+
+    });
+
+});
+
+/* SUBJECT EFFECT */
+
+const subjects = document.querySelectorAll(".subject");
+
+subjects.forEach(subject=>{
+
+    subject.addEventListener("mouseenter",()=>{
+
+        subject.style.background="#00bfff";
+
+    });
+
+    subject.addEventListener("mouseleave",()=>{
+
+        subject.style.background="#0f172a";
+
+    });
+
+});
+
+</script>
+
+</body>
+  </html>
