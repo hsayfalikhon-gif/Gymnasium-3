@@ -6,20 +6,23 @@
 
 <title>Гимназияи №3 | Истаравшан</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:sans-serif;
     scroll-behavior:smooth;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
     background:#0f172a;
-    color:white;
     overflow-x:hidden;
+    color:white;
 }
 
 /* HEADER */
@@ -30,8 +33,9 @@ header{
     top:0;
     left:0;
     z-index:1000;
-    background:rgba(0,0,0,0.5);
+    background:rgba(0,0,0,0.4);
     backdrop-filter:blur(15px);
+    transition:0.4s;
 }
 
 nav{
@@ -43,34 +47,37 @@ nav{
 
 .logo{
     font-size:35px;
-    color:#00bfff;
-    font-weight:bold;
+    font-weight:700;
+    color:#38bdf8;
 }
 
 nav ul{
     display:flex;
+    gap:30px;
     list-style:none;
-    gap:25px;
 }
 
 nav ul li a{
-    color:white;
     text-decoration:none;
+    color:white;
     font-size:18px;
-    transition:0.3s;
+    transition:0.4s;
 }
 
 nav ul li a:hover{
-    color:#00bfff;
+    color:#38bdf8;
 }
 
 /* HERO */
 
 .hero{
+    width:100%;
     height:100vh;
+
     background:
     linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
-    <img src="IMG_20260111_204418_457.jpg">
+    url('IMG_20260111_204418_457.jpg');
+
     background-size:cover;
     background-position:center;
 
@@ -81,23 +88,26 @@ nav ul li a:hover{
     padding:20px;
 }
 
+.hero-content{
+    animation:fade 2s ease;
+}
+
 .hero-content h1{
-    font-size:75px;
+    font-size:80px;
     margin-bottom:20px;
-    animation:fadeDown 2s ease;
 }
 
 .hero-content p{
-    font-size:24px;
-    margin-bottom:30px;
-    color:#d1d5db;
+    font-size:25px;
+    color:#cbd5e1;
+    margin-bottom:35px;
 }
 
 .hero-content button{
     padding:16px 45px;
     border:none;
     border-radius:50px;
-    background:#00bfff;
+    background:#38bdf8;
     color:white;
     font-size:18px;
     cursor:pointer;
@@ -106,21 +116,21 @@ nav ul li a:hover{
 
 .hero-content button:hover{
     transform:scale(1.1);
-    background:#0099cc;
+    background:#0ea5e9;
 }
 
 /* ABOUT */
 
 .about{
     padding:120px 10%;
-    text-align:center;
     background:white;
     color:black;
+    text-align:center;
 }
 
 .about h2{
     font-size:55px;
-    color:#00bfff;
+    color:#38bdf8;
     margin-bottom:30px;
 }
 
@@ -137,31 +147,32 @@ nav ul li a:hover{
     justify-content:center;
     flex-wrap:wrap;
     gap:40px;
+    background:#111827;
 }
 
 .card{
     width:280px;
-    background:rgba(255,255,255,0.08);
-    border-radius:25px;
     padding:50px;
+    border-radius:30px;
     text-align:center;
+    background:rgba(255,255,255,0.08);
     backdrop-filter:blur(15px);
     transition:0.5s;
 }
 
 .card:hover{
     transform:translateY(-15px);
-    box-shadow:0 0 30px #00bfff;
+    box-shadow:0 0 30px #38bdf8;
 }
 
 .card h3{
     font-size:60px;
-    color:#00bfff;
+    color:#38bdf8;
 }
 
 .card p{
-    margin-top:15px;
     font-size:22px;
+    margin-top:15px;
 }
 
 /* DIRECTOR */
@@ -169,17 +180,17 @@ nav ul li a:hover{
 .director{
     padding:120px 10%;
     text-align:center;
-    background:#111827;
+    background:#0f172a;
 }
 
 .director h2{
     font-size:55px;
-    color:#00bfff;
+    color:#38bdf8;
     margin-bottom:20px;
 }
 
 .director p{
-    font-size:30px;
+    font-size:32px;
 }
 
 /* SUBJECTS */
@@ -193,7 +204,7 @@ nav ul li a:hover{
 
 .subjects h2{
     font-size:55px;
-    color:#00bfff;
+    color:#38bdf8;
     margin-bottom:60px;
 }
 
@@ -206,44 +217,44 @@ nav ul li a:hover{
 .subject{
     background:#0f172a;
     color:white;
-    padding:50px 20px;
     border-radius:25px;
+    padding:45px 20px;
     transition:0.5s;
 }
 
 .subject:hover{
     transform:scale(1.05);
-    box-shadow:0 0 25px #00bfff;
+    box-shadow:0 0 30px #38bdf8;
 }
 
 .subject h3{
-    font-size:35px;
+    font-size:32px;
+    color:#38bdf8;
     margin-bottom:15px;
-    color:#00bfff;
 }
 
 .subject p{
     font-size:18px;
-    line-height:1.6;
+    line-height:1.7;
 }
 
 /* GALLERY */
 
 .gallery{
     padding:120px 10%;
+    background:#111827;
     text-align:center;
-    background:#0f172a;
 }
 
 .gallery h2{
     font-size:55px;
-    color:#00bfff;
+    color:#38bdf8;
     margin-bottom:50px;
 }
 
 .images{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
     gap:30px;
 }
 
@@ -257,23 +268,51 @@ nav ul li a:hover{
     transform:scale(1.05);
 }
 
+/* ACHIEVEMENTS */
+
+.achievements{
+    padding:120px 10%;
+    background:white;
+    color:black;
+    text-align:center;
+}
+
+.achievements h2{
+    font-size:55px;
+    color:#38bdf8;
+    margin-bottom:50px;
+}
+
+.achievement-box{
+    background:#0f172a;
+    color:white;
+    padding:40px;
+    border-radius:25px;
+    margin-top:20px;
+    transition:0.4s;
+}
+
+.achievement-box:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px #38bdf8;
+}
+
 /* CONTACT */
 
 .contact{
     padding:120px 10%;
     text-align:center;
-    background:white;
-    color:black;
+    background:#0f172a;
 }
 
 .contact h2{
     font-size:55px;
-    color:#00bfff;
-    margin-bottom:30px;
+    color:#38bdf8;
+    margin-bottom:40px;
 }
 
 .contact p{
-    font-size:22px;
+    font-size:24px;
     margin:15px 0;
 }
 
@@ -281,18 +320,18 @@ nav ul li a:hover{
 
 footer{
     background:black;
-    padding:40px;
     text-align:center;
+    padding:35px;
     font-size:18px;
 }
 
 /* ANIMATION */
 
-@keyframes fadeDown{
+@keyframes fade{
 
     from{
         opacity:0;
-        transform:translateY(-50px);
+        transform:translateY(50px);
     }
 
     to{
@@ -325,11 +364,12 @@ footer{
     }
 
     .about h2,
-    .director h2,
     .subjects h2,
     .gallery h2,
-    .contact h2{
-        font-size:40px;
+    .director h2,
+    .contact h2,
+    .achievements h2{
+        font-size:38px;
     }
 
 }
@@ -365,14 +405,14 @@ footer{
 <div class="hero-content">
 
 <h1>
-Гимназияи №3 ш.Истаравшан
+Гимназияи №3
 </h1>
 
 <p>
-Муассисаи муосири таълимӣ барои насли оянда
+Муассисаи муосири таълимӣ дар шаҳри Истаравшан
 </p>
 
-<button onclick="showMessage()">
+<button onclick="welcome()">
 Маълумоти бештар
 </button>
 
@@ -389,11 +429,10 @@ footer{
 </h2>
 
 <p>
-Гимназияи №3 шаҳри Истаравшан яке аз беҳтарин
-муассисаҳои таълимӣ буда, дорои омӯзгорони касбӣ,
-синфхонаҳои муосир ва муҳити замонавии таҳсил мебошад.
-Дар муассиса зиёда аз 500 хонанда ва 25 омӯзгор
-фаъолият менамоянд.
+Гимназияи №3 шаҳри Истаравшан яке аз муассисаҳои
+беҳтарини таълимӣ буда, дорои омӯзгорони касбӣ,
+муҳити замонавии таҳсил ва синфхонаҳои муҷаҳҳаз мебошад.
+Дар муассиса зиёда аз 500 хонанда ва 45 омӯзгор фаъолият мекунанд.
 </p>
 
 </section>
@@ -446,7 +485,7 @@ footer{
 <div class="subject">
 <h3>Биология</h3>
 <p>
-Омӯзиши табиат, инсон ва организмҳои зинда.
+Омӯзиши табиат ва организмҳои зинда.
 </p>
 </div>
 
@@ -460,7 +499,7 @@ footer{
 <div class="subject">
 <h3>Таърих</h3>
 <p>
-Омӯзиши таърихи халқу давлатҳо.
+Омӯзиши таърихи халқҳо ва давлатҳо.
 </p>
 </div>
 
@@ -485,20 +524,6 @@ footer{
 </p>
 </div>
 
-<div class="subject">
-<h3>Забони Англисӣ</h3>
-<p>
-Омӯзиши забони байналмилалӣ.
-</p>
-</div>
-
-<div class="subject">
-<h3>География</h3>
-<p>
-Омӯзиши кишварҳо ва табиати ҷаҳон.
-</p>
-</div>
-
 </div>
 
 </section>
@@ -513,12 +538,40 @@ footer{
 
 <div class="images">
 
-<img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop">
+<img src="IMG_20260111_204418_457.jpg">
 
-<img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop">
+<img src="IMG_20260111_204418_457.jpg">
 
-<img src="https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=1200&auto=format&fit=crop">
+<img src="IMG_20260111_204418_457.jpg">
 
+</div>
+
+</section>
+
+<!-- ACHIEVEMENTS -->
+
+<section class="achievements">
+
+<h2>
+Дастовардҳо
+</h2>
+
+<div class="achievement-box">
+<h3>
+🏆 Иштирок дар озмунҳои ҷумҳуриявӣ
+</h3>
+</div>
+
+<div class="achievement-box">
+<h3>
+📚 Пешрафти хонандагон дар илм
+</h3>
+</div>
+
+<div class="achievement-box">
+<h3>
+💻 Технологияҳои муосири таълим
+</h3>
 </div>
 
 </section>
@@ -545,29 +598,37 @@ footer{
 
 </section>
 
-<!-- FOOTER -->
-
 <footer>
 
-© 2026 Гимназияи №3 | Ҳамаи ҳуқуқҳо ҳифз шудаанд | тел: +992 78-264-09-09
+© 2026 Гимназияи №3 | Ҳамаи ҳуқуқҳо ҳифз шудаанд | (+992) 78-264-09-09
 
 </footer>
 
 <script>
 
-function showMessage(){
+function welcome(){
 
     alert("Хуш омадед ба саҳифаи Гимназияи №3 шаҳри Истаравшан!");
 
 }
 
-/* ANIMATION */
+/* SCROLL EFFECT */
 
-const cards = document.querySelectorAll(".card");
+window.addEventListener("scroll",()=>{
+
+    const header=document.querySelector("header");
+
+    header.style.background="rgba(0,0,0,0.7)";
+
+});
+
+/* CARD EFFECT */
+
+const cards=document.querySelectorAll(".card");
 
 cards.forEach(card=>{
 
-    card.addEventListener("mousemove",()=>{
+    card.addEventListener("mouseenter",()=>{
 
         card.style.transform="translateY(-15px)";
 
@@ -581,27 +642,7 @@ cards.forEach(card=>{
 
 });
 
-/* SUBJECT EFFECT */
-
-const subjects = document.querySelectorAll(".subject");
-
-subjects.forEach(subject=>{
-
-    subject.addEventListener("mouseenter",()=>{
-
-        subject.style.background="#00bfff";
-
-    });
-
-    subject.addEventListener("mouseleave",()=>{
-
-        subject.style.background="#0f172a";
-
-    });
-
-});
-
 </script>
 
 </body>
-  </html>
+</html>
